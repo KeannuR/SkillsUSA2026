@@ -14,7 +14,7 @@ TAX_RATE = 0.08
     #("Item2", 0.50, 100)
     #]
 
-
+#Product -------------------------------------------------------------------
 class Product:
     def __init__(self, name: str, price: float, quantity: int):
         self.name = name
@@ -25,7 +25,7 @@ class Product:
     def __str__(self):
         return f"{self.name:<22} ${self.price:<8.2f} qty: {self.quantity}"
 
-
+#Inventory ------------------------------------------------------------
 class Inventory:
     def __init__(self, seed):
         self.items: dict[str, Product] = {}
@@ -67,7 +67,7 @@ class Inventory:
             product.quantity = int(value)
         return True
 
-
+# Handles shoppers cart
 class Cart:
     def __init__(self):
         self.items: dict[str, int] = defaultdict(int)
@@ -96,7 +96,7 @@ class Cart:
         return total
 
 
-# ── Store ─────────────────────────────────────────────────────────────────────
+#Store ─────────────────────────────────────────────────────────────────────
 
 class Store:
     def __init__(self, seed):
@@ -104,7 +104,7 @@ class Store:
         self.cart = Cart()
         self.gross_sales = 0.0
 
-    # ── Helpers ───────────────────────────────────────────────────────────────
+    #Helpers ───────────────────────────────────────────────────────────────
 
     @staticmethod
     def _header(title: str):
@@ -116,7 +116,7 @@ class Store:
     def _input(prompt: str) -> str:
         return input(f"  {prompt}").strip()
 
-    # ── Shop ──────────────────────────────────────────────────────────────────
+    #Shop ──────────────────────────────────────────────────────────────────
 
     def shop(self):
         while True:
@@ -160,7 +160,7 @@ class Store:
             self.cart.add(selected, qty)
             print(f"  Added {qty}x {selected.name} to cart.")
 
-    # ── Checkout ──────────────────────────────────────────────────────────────
+    #Checkout ──────────────────────────────────────────────────────────────
 
     def checkout(self):
         if self.cart.is_empty():
@@ -220,7 +220,7 @@ class Store:
         print("─" * 50)
         print("  Thank you for your purchase!")
 
-    # ── Manager ───────────────────────────────────────────────────────────────
+    #Manager ───────────────────────────────────────────────────────────────
 
     def manager(self):
         self._header("MANAGER LOGIN")
@@ -347,7 +347,7 @@ class Store:
         else:
             print("  Invalid field choice.")
 
-    # ── Main Loop ─────────────────────────────────────────────────────────────
+    #Main Loop ─────────────────────────────────────────────────────────────
 
     def run(self):
         print("\n" + "=" * 50)
