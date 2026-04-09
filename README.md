@@ -1,7 +1,7 @@
 # SkillsUSA2026
-# Competition number 1478
-# Three tasks for the SkillsUSA programming competition.
-# Python
+ Competition number 1478
+ Three tasks for the SkillsUSA programming competition.
+ Python
 
 # How to run
 
@@ -14,13 +14,17 @@ To pass a list (for task 2) insert it with commas as seperation and it will be a
 Examples for running:
 
 Task 1:
+
 python3 main.py 1 hello h#llo
+
 Task 2: 
 python3 main.py 2 5 1,2,3,2,4
+
 Task 3:
+
 python3 main.py 3
 
 
-Thank you!
+Thank you! Have a good day :) 
 
 
